@@ -15,6 +15,7 @@ $f3->set('DEBUG', false);
 
 $f3->set('AUTOLOAD', ROOT_DIR . '/classes/');
 
+define('MAIN_URL', 'www.coffee-dragon.ro');
 define('IMAGES_DIR', '/images/');
 
 define('DATA_DIR', '/export/www/be_new/data/');
