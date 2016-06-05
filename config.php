@@ -15,7 +15,7 @@ $f3->set('DEBUG', false);
 
 $f3->set('AUTOLOAD', ROOT_DIR . '/classes/');
 
-define('MAIN_URL', 'www.coffee-dragon.ro');
+define('MAIN_URL', 'coffee-dragon.ro');
 define('IMAGES_DIR', '/images/');
 
 define('DATA_DIR', '/export/www/be_new/data/');
@@ -39,7 +39,6 @@ define('JACKET_EXTRA_HEIGHT', 500);
 
 //$f3->set('MONGO', $mongo);
 $f3->set('LANGUAGE', 'ro-RO');
-
 
 $logger = new \Log('debug.log');
 function debug($message)
