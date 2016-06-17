@@ -1,5 +1,11 @@
 <header id="header">
-    <a class="left mobile-nav" href="#nav"><i class="fa fa-menu"></i></a>
-    <div id="logo"><a href="http://<?php echo MAIN_URL; ?>" class="middle logo-full" title="Coffee Dragon"><title>Cafeneaua Coffee Dragon</title><img src="/images/logo.png"></a>
-    </div>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img alt="Coffee Dragon" src="/images/logo-navBar.png">
+	      </a>
+	    </div>
+	  </div>
+	</nav>
 </header>

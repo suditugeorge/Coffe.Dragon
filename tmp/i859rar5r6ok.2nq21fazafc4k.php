@@ -6,7 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script language ="JavaScript" src="/ui/vendor/js/jquery-3.0.0.min.js"></script>
         <link href="/ui/vendor/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/ui/sass/main.css">
         <?php if (isset($pager)): ?>
             <?php if (array_key_exists('prev', $pager['rel'])): ?>
                     <link rel="prev" href="<?php echo 'https://'.MAIN_URL.$pager['rel']['prev']; ?>" />
@@ -14,9 +16,6 @@
             <?php if (array_key_exists('next', $pager['rel'])): ?>
                     <link rel="next" href="<?php echo 'https://'.MAIN_URL.$pager['rel']['next']; ?>" />
             <?php endif; ?>
-        <?php endif; ?>
-        <?php if (isset($robots)): ?>
-        		<meta name="robots" content="<?php echo $robots; ?>">
         <?php endif; ?>
         <?php if (isset($description)): ?>
         		<meta name="description" content="<?php echo $description; ?>" />
