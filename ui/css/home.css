@@ -4,4 +4,8 @@
   background-repeat: no-repeat;
   background-size: cover; }
 
+.improved-hr {
+  background: url("/images/betterHr.png") center 0 no-repeat;
+  height: 3em; }
+
 /*# sourceMappingURL=home.css.map */
