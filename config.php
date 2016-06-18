@@ -18,8 +18,6 @@ $f3->set('AUTOLOAD', ROOT_DIR . '/classes/');
 define('MAIN_URL', 'coffee-dragon.ro');
 define('IMAGES_DIR', '/images/');
 
-define('DATA_DIR', '/export/www/be_new/data/');
-
 define('JACKET_LARGE_WIDTH', 300);
 define('JACKET_LARGE_HEIGHT', 300);
 define('JACKET_THUMB_WIDTH', 225);

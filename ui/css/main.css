@@ -25,10 +25,21 @@
 
 .dropdown-menu {
   background: url("/images/pattern_bg.jpg") 50% 0 repeat; }
-  .dropdown-menu:hover {
-    display: block; }
 
 a.dropdown-toggle {
   background: transparent !important; }
+
+footer {
+  background: url("/images/pattern_bg.jpg") repeat;
+  margin-left: auto;
+  margin-right: auto; }
+
+.footer {
+  padding: 3em 0 2em;
+  color: #d5c69f; }
+
+.contact {
+  font-weight: 700;
+  font-size: large; }
 
 /*# sourceMappingURL=main.css.map */

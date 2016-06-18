@@ -34,5 +34,6 @@
 	<div id="main">
         <?php echo $this->render($content,$this->mime,get_defined_vars(),0); ?>
 	</div>
+    <?php echo $this->render('html/layout/footer.html',$this->mime,get_defined_vars(),0); ?>
 </body>
 </html>
