@@ -9,7 +9,7 @@
         <script language ="JavaScript" src="/ui/vendor/js/jquery-2.2.4.min.js"></script>
         <script language ="JavaScript" src="/ui/vendor/js/bootstrap.min.js"></script>
         <link href="/ui/vendor/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/ui/sass/main.css">
+        <link rel="stylesheet" type="text/css" href="/ui/css/main.css">
         <check if="{{isset(@pager)}}">
             <check if="{{array_key_exists('prev', @pager.rel)}}">
                     <link rel="prev" href="{{'https://'.MAIN_URL.@pager.rel.prev}}" />
@@ -24,11 +24,9 @@
 	</head>
 <body id="top">
     <include href="html/layout/header.html" />
-		<!-- Main -->
-        <exclude>
-			<div id="main">
-                <include href="{{ @content }}" />
-			</div>
-        </exclude>
+	<!-- Main -->
+	<div id="main">
+        <include href="{{ @content }}" />
+	</div>
 </body>
 </html>

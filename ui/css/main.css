@@ -1,0 +1,33 @@
+.navbar-brand {
+  padding: 0px 15px 15px 15px; }
+
+.navbar-default {
+  background: url("/images/pattern_bg.jpg") 50% 0 repeat;
+  border-radius: 0 0 0.5em 0.5em; }
+
+.logo {
+  position: absolute;
+  left: 35%; }
+
+.nav-text, .dropdown-toggle {
+  font-weight: bold;
+  color: #fff !important; }
+
+.separator {
+  color: #fff;
+  padding-top: 1em;
+  font-weight: bold; }
+
+#main {
+  padding-top: 7em;
+  background: url("/images/body_bg.jpg") 50% 0 repeat; }
+
+.dropdown-menu {
+  background: url("/images/pattern_bg.jpg") 50% 0 repeat; }
+  .dropdown-menu:hover {
+    display: block; }
+
+a.dropdown-toggle {
+  background: transparent !important; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,8 +1,8 @@
 <?php
 namespace controllers;
 
-use \data\account\Security;
-use \data\account\Users;
+//use \data\account\Security;
+//use \data\account\Users;
 
 class Main extends Controller
 {
@@ -11,6 +11,7 @@ class Main extends Controller
     {
         $f3->set('title', 'Cafeaua ta zilnică');
         $f3->set('description', 'Cafeaua ta va fi mereu caldă si gata pentru tine');
-        $f3->set('content', 'home.html');
+        $f3->set('content', 'html/home.html');
+        $f3->push('styles', '/css/home.css');
     }
 }
