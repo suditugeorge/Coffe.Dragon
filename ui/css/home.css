@@ -1,3 +1,7 @@
-
+.jumbotron {
+  background: url("/images/jumbutron.jpg");
+  height: 25em;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 /*# sourceMappingURL=home.css.map */

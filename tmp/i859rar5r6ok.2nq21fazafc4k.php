@@ -8,8 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script language ="JavaScript" src="/ui/vendor/js/jquery-2.2.4.min.js"></script>
         <script language ="JavaScript" src="/ui/vendor/js/bootstrap.min.js"></script>
+        <script language ="JavaScript" src="/ui/vendor/js/loadCSS.js"></script>
+        <link rel="icon" href="/images/logo-transparent.png">
         <link href="/ui/vendor/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/ui/css/main.css">
+        
         <?php if (isset($pager)): ?>
             <?php if (array_key_exists('prev', $pager['rel'])): ?>
                     <link rel="prev" href="<?php echo 'https://'.MAIN_URL.$pager['rel']['prev']; ?>" />
@@ -24,6 +27,9 @@
 	</head>
 <body id="top">
     <?php echo $this->render('html/layout/header.html',$this->mime,get_defined_vars(),0); ?>
+    <?php if (isset($styles)): ?><?php foreach (($styles?:array()) as $style): ?>
+        <script type="text/javascript">loadCSS("<?php echo $style; ?>");</script>
+    <?php endforeach; ?><?php endif; ?>
 	<!-- Main -->
 	<div id="main">
         <?php echo $this->render($content,$this->mime,get_defined_vars(),0); ?>

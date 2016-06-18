@@ -3,7 +3,8 @@
 
 .navbar-default {
   background: url("/images/pattern_bg.jpg") 50% 0 repeat;
-  border-radius: 0 0 0.5em 0.5em; }
+  border-radius: 0 0 0.5em 0.5em;
+  border-color: transparent; }
 
 .logo {
   position: absolute;
@@ -19,7 +20,7 @@
   font-weight: bold; }
 
 #main {
-  padding-top: 7em;
+  padding-top: 3.2em;
   background: url("/images/body_bg.jpg") 50% 0 repeat; }
 
 .dropdown-menu {
