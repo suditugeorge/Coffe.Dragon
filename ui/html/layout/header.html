@@ -8,7 +8,7 @@
             </button>
         </div>
         <div class="logo">
-      	  <a href="#">
+      	  <a href="/">
         		<img alt="Coffee Dragon" src="/images/logo-navBar.png">
       		</a>
         </div>
