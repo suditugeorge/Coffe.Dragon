@@ -33,9 +33,9 @@ define('JACKET_BANNER_HEIGHT', 86);
 define('JACKET_EXTRA_WIDTH', 300);
 define('JACKET_EXTRA_HEIGHT', 500);
 
-//$mongo = new MongoClient();
+$mongo = new \MongoClient();
 
-//$f3->set('MONGO', $mongo);
+$f3->set('MONGO', $mongo);
 $f3->set('LANGUAGE', 'ro-RO');
 
 $logger = new \Log('debug.log');
