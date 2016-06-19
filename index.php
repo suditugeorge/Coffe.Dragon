@@ -13,6 +13,7 @@ $f3->config('config.ini');
 
 $f3->route('GET|HEAD /', 'controllers\Main->home');
 $f3->route('GET|HEAD /login', 'controllers\Account->loginOrRegister');
+$f3->route('POST /register', 'controllers\Account->register');
 
 $f3->set('ONERROR', function ($f3) {
     $error = $f3->get('ERROR');

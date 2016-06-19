@@ -1,3 +1,14 @@
+.hidden {
+    display: none !important;
+}
+.error{
+	color: #a94442;
+	margin-top: 1em;
+	font-weight: 700;
+}
+.input-error{
+	border:0.3em solid #a94442 !important;
+}
 .navbar-brand{
 	padding: 0px 15px 15px 15px;
 }

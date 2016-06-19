@@ -30,6 +30,7 @@
     <?php if (isset($styles)): ?><?php foreach (($styles?:array()) as $style): ?>
         <script type="text/javascript">loadCSS("<?php echo $style; ?>");</script>
     <?php endforeach; ?><?php endif; ?>
+    <?php if (isset($scripts)): ?><?php foreach (($scripts?:array()) as $script): ?><script src="<?php echo $script; ?>"></script><?php endforeach; ?><?php endif; ?>
 	<!-- Main -->
 	<div id="main">
         <?php echo $this->render($content,$this->mime,get_defined_vars(),0); ?>
