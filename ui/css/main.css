@@ -4,11 +4,12 @@
 .navbar-default {
   background: url("/images/pattern_bg.jpg") 50% 0 repeat;
   border-radius: 0 0 0.5em 0.5em;
-  border-color: transparent; }
+  border-color: transparent;
+  margin-bottom: 0 !important; }
 
 .logo {
   position: absolute;
-  left: 35%; }
+  left: 38%; }
 
 .nav-text, .dropdown-toggle {
   font-weight: bold;
