@@ -18,6 +18,8 @@ $f3->route('GET|HEAD /images/@imageName', 'controllers\Products->getStaticImage'
 $f3->route('GET|HEAD /phpinfo', function () {
     die(print_r(phpinfo(), 1));
 });
+$f3->route('GET|HEAD /initialize', 'controllers\Products->setIds');
+$f3->route('GET|HEAD /create-product', 'controllers\Products->createNewProduct');
 
 $f3->set('ONERROR', function ($f3) {
     $error = $f3->get('ERROR');
