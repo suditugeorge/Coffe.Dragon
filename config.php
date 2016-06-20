@@ -30,8 +30,8 @@ define('JACKET_XSMALL_HEIGHT', 55);
 define('JACKET_BANNER_WIDTH', 86);
 define('JACKET_BANNER_HEIGHT', 86);
 
-define('JACKET_EXTRA_WIDTH', 300);
-define('JACKET_EXTRA_HEIGHT', 500);
+define('JACKET_EXTRA_WIDTH', 400);
+define('JACKET_EXTRA_HEIGHT', 600);
 
 $mongo = new \MongoClient();
 
