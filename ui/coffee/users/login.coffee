@@ -60,6 +60,34 @@ $ ->
     #Call the function register witch does not take any parameters
     register()
     return
+  $('[name="login-submit"]').click (e) ->
+    $email_field = $('[name="username"]')
+    email = $email_field.val()
+    emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if !emailRegex.test(email)
+      $email_field.addClass 'input-error'
+      $('.username-error').removeClass 'hidden'
+      return
+    $email_field.removeClass 'input-error'
+    $('.username-error').addClass 'hidden'
+    $password_field = $('[name="password"]')
+    password = $password_field.val()
+    passwordRegex = (/^(?=.*[a-z])[0-9a-zA-Z]{8,}$/)
+    if !passwordRegex.test(password)
+      $password_field.addClass 'input-error'
+      $('.password-error').removeClass 'hidden'
+      return
+    $.post '/doLogin', { email: email, password: password }, (json) ->
+      if json.success
+        $('.defined-error').addClass 'hidden'
+        window.location.href = "/"
+        return
+      else
+        error = $('.defined-error')
+        error.html(json.message)
+        error.removeClass 'hidden'
+        return
+    return
   $(document).keypress (e) ->
     if e.which == 13
       if $('#register-form-link').hasClass('active')

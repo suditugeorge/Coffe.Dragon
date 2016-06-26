@@ -12,7 +12,7 @@ class Security
         $mongo = $f3->get('MONGO');
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $user = ['email' => $email, 'password' => $password_hash];
-        $result = $mongo->users->users->insert($user, ['j' => 1]);
+        $result = $mongo->CoffeeDragon->users->insert($user, ['j' => 1]);
         return $result['ok'];
     }
 }
