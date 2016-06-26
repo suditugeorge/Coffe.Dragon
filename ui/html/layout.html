@@ -28,7 +28,7 @@
 <body id="top">
     <include href="html/layout/header.html" />
     <check if="{{isset(@styles)}}"><repeat group="{{@styles}}" value="@style">
-        <script type="text/javascript">loadCSS("{{@style}}");</script>
+        <script type="text/javascript">loadCSS("{{data\StaticContent::css(@style)}}");</script>
     </repeat></check>
     <check if="{{isset(@scripts)}}"><repeat group="{{@scripts}}" value="@script"><script src="{{@script}}"></script></repeat></check>
 	<!-- Main -->

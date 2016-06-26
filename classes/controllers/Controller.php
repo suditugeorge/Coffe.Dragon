@@ -26,7 +26,7 @@ class Controller
     {
         $this->f3 = $f3;
         $this->db = $this->f3->get('DB');
-        $this->m  = $f3->get('MONGO');
+        $this->m = $f3->get('MONGO');
         $f3->set('scripts', []);
         $f3->set('styles', []);
         $f3->set('head', []);
@@ -54,7 +54,7 @@ class Controller
         }
         // Render HTML layout
         if ($this->layout) {
-            $out = \BeTemplate::instance()->render($this->layout, $this->contentType);
+            $out = \Template::instance()->render($this->layout, $this->contentType);
             echo $out;
 
         }
@@ -69,7 +69,7 @@ class Controller
         }
         $p = ['text' => _('<i class="fa fa-left-open"></i>')];
         if ($page > 1) {
-            $p['url']  = str_replace('$', $page - 1, $url);
+            $p['url'] = str_replace('$', $page - 1, $url);
             $p['role'] = 'prev';
             $p['page'] = $page - 1;
         }
@@ -91,7 +91,7 @@ class Controller
                 }
             } elseif ($page <= 4) {
                 $pager[] = ['text' => 1, 'url' => str_replace('$', 1, $url), 'page' => 1];
-                $max     = min($page + 1, $pages);
+                $max = min($page + 1, $pages);
                 for ($i = 2; $i <= $max; ++$i) {
                     if ($i == $page) {
                         $pager[] = ['text' => $i, 'current' => true];
@@ -126,7 +126,7 @@ class Controller
 
         $p = ['text' => _('<i class="fa fa-right-open"></i>')];
         if ($page < $pages) {
-            $p['url']  = str_replace('$', $page + 1, $url);
+            $p['url'] = str_replace('$', $page + 1, $url);
             $p['page'] = $page + 1;
             $p['role'] = 'next';
         }
@@ -145,7 +145,7 @@ class Controller
 
     public function getFilteredParams($names)
     {
-        $verb   = $this->f3->get('VERB');
+        $verb = $this->f3->get('VERB');
         $source = [];
         if ($verb == 'POST') {
             if ($_SERVER["CONTENT_TYPE"] == 'application/json') {

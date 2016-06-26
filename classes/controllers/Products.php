@@ -1,10 +1,53 @@
 <?php
 namespace controllers;
 
+use data\Images;
 use data\Product;
 
 class Products extends Controller
 {
+
+    public function viewProduct(\Base $f3)
+    {
+        $id = $f3->get('PARAMS.id');
+        if (!$id) {
+            $f3->error(404);
+            return;
+        }
+        $mongo = $f3->get('MONGO');
+        $product = $mongo->CoffeeDragon->products->findOne(['id' => (int) $id]);
+        if (!$product) {
+            $f3->error(404);
+            return;
+        }
+        if ($product['has_image']) {
+            $product['image_url'] = Images::getProductImageUrl($product['id']);
+        }
+        $product['price'] = floatval($product['price']);
+        $f3->push('styles', 'product/product.css');
+        $f3->set('product', $product);
+        $f3->set('content', 'html/product/productView.html');
+        $f3->set('title', $product['name']);
+        $f3->set('description', $product['description']);
+    }
+
+    public function redirectToProduct(\Base $f3)
+    {
+        $id = $f3->get('PARAMS.id');
+        if (!$id) {
+            $f3->error(404);
+            return;
+        }
+        $mongo = $f3->get('MONGO');
+        $result = $mongo->CoffeeDragon->products->findOne(['id' => (int) $id], ['name' => 1]);
+        if (!$result) {
+            $f3->error(404);
+            return;
+        }
+        $url = DOMAIN . MAIN_URL . '/produs/' . Product::stringToUrl($result['name']) . '/' . $id;
+        $f3->reroute($url, true);
+    }
+
     public function createNewProduct(\Base $f3)
     {
         $this->layout = null;
@@ -33,27 +76,7 @@ class Products extends Controller
     {
         $this->layout = null;
         $imageName = $f3->get('PARAMS.imageName');
-        $path = ROOT_DIR . IMAGES_DIR . $imageName . ".jpg";
-        $img_width = JACKET_EXTRA_WIDTH;
-        $img_height = JACKET_EXTRA_HEIGHT;
-
-        $im = new \Imagick();
-
-        $im->setSize($img_width * 2, $img_height * 2); //Makes the process a lot faster
-        $im->readImage($path);
-        $im->setCompressionQuality(100);
-        $im->stripimage();
-        $im->resizeimage($img_width, $img_height, \Imagick::FILTER_LANCZOS, 1, true);
-        $im->thumbnailImage($img_width, $img_height, true);
-
-        $img = $im->getImageBlob();
-
-        header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime($path)) . ' GMT', true, 200);
-        header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 86400 * 365) . ' GMT', true, 200);
-        header('Content-Length: ' . strlen($img));
-        header('Content-Type: image/jpeg');
-        header('ETag: ' . md5($img));
-        print $img;
+        print Images::processImage($imageName);
         exit;
 
     }
@@ -66,6 +89,14 @@ class Products extends Controller
         $users = ['_id' => 'users', 'id' => 1];
         $mongo->CoffeeDragon->ids->insert($products, ['j' => 1]);
         $mongo->CoffeeDragon->ids->insert($users, ['j' => 1]);
+        exit;
+    }
+
+    public function getImage(\Base $f3)
+    {
+        $this->layout = null;
+        $id = $f3->get('PARAMS.id');
+        echo Images::processImage($id, 'product');
         exit;
     }
 }

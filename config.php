@@ -15,8 +15,11 @@ $f3->set('DEBUG', false);
 
 $f3->set('AUTOLOAD', ROOT_DIR . '/classes/');
 
+define('DOMAIN', 'http://');
 define('MAIN_URL', 'coffee-dragon.ro');
-define('IMAGES_DIR', '/images/');
+define('STATIC_IMAGES_DIR', '/images/');
+define('PRODUCTS_IMAGES_DIR', '/images/products/');
+define('CURRENCY', 'RON');
 
 define('JACKET_LARGE_WIDTH', 300);
 define('JACKET_LARGE_HEIGHT', 300);

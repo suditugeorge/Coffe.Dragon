@@ -28,7 +28,7 @@
 <body id="top">
     <?php echo $this->render('html/layout/header.html',$this->mime,get_defined_vars(),0); ?>
     <?php if (isset($styles)): ?><?php foreach (($styles?:array()) as $style): ?>
-        <script type="text/javascript">loadCSS("<?php echo $style; ?>");</script>
+        <script type="text/javascript">loadCSS("<?php echo data\StaticContent::css($style); ?>");</script>
     <?php endforeach; ?><?php endif; ?>
     <?php if (isset($scripts)): ?><?php foreach (($scripts?:array()) as $script): ?><script src="<?php echo $script; ?>"></script><?php endforeach; ?><?php endif; ?>
 	<!-- Main -->

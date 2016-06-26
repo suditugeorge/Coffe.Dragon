@@ -51,4 +51,11 @@ class Product
             ['a', 'a', 'i', 's', 't', 'A', 'A', 'I', 'S', 'T'], $string);
         return $string;
     }
+
+    public static function formatPrice($value)
+    {
+        $parts = \util\StringUtil::getNumberParts($value);
+        return $parts['int'] . '<sup><span class="hidden">.</span>' . $parts['dec'] . '</sup> ' . CURRENCY;
+    }
+
 }
