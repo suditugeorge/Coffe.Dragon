@@ -70,8 +70,40 @@
     $('#register-submit').click(function(e) {
       register();
     });
-    $('#login-submit').click(function(e) {
-      console.log('cacat');
+    $('[name="login-submit"]').click(function(e) {
+      var $email_field, $password_field, email, emailRegex, password, passwordRegex;
+      $email_field = $('[name="username"]');
+      email = $email_field.val();
+      emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!emailRegex.test(email)) {
+        $email_field.addClass('input-error');
+        $('.username-error').removeClass('hidden');
+        return;
+      }
+      $email_field.removeClass('input-error');
+      $('.username-error').addClass('hidden');
+      $password_field = $('[name="password"]');
+      password = $password_field.val();
+      passwordRegex = /^(?=.*[a-z])[0-9a-zA-Z]{8,}$/;
+      if (!passwordRegex.test(password)) {
+        $password_field.addClass('input-error');
+        $('.password-error').removeClass('hidden');
+        return;
+      }
+      $.post('/doLogin', {
+        email: email,
+        password: password
+      }, function(json) {
+        var error;
+        if (json.success) {
+          $('.defined-error').addClass('hidden');
+          window.location.href = "/";
+        } else {
+          error = $('.defined-error');
+          error.html(json.message);
+          error.removeClass('hidden');
+        }
+      });
     });
     $(document).keypress(function(e) {
       if (e.which === 13) {

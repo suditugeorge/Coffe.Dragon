@@ -32,7 +32,7 @@ class Account extends Controller
         }
         $is_created = Security::createAccount($email, $password);
         if (!$is_created) {
-            $this->result = ['success' => false, 'message' => 'A intervenit o eroare.Vă rugăm să încercați mai târziu sau să ne contactați telefonic'];
+            $this->result = ['success' => false, 'message' => 'A intervenit o eroare! Vă rugăm să încercați mai târziu sau să ne contactați telefonic.'];
             return;
         }
         $this->result = $result;
