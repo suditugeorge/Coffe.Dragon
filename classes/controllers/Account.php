@@ -12,8 +12,8 @@ class Account extends Controller
     {
         $f3->set('title', 'Login');
         $f3->set('description', 'Pentru a beneficia de ofertele și reducerile Coffee Dragon vă rugăm să vă creați un cont sau sa vă logați pe site.Vă mulțumim');
-        $f3->push('styles', 'ui/css/users/login.css');
-        $f3->push('scripts', 'ui/coffee/js/users/login.js');
+        $f3->push('styles', 'users/login.css');
+        $f3->push('scripts', 'ui/js/users/login.js');
         $f3->set('content', 'html/users/login.html');
     }
 
@@ -24,7 +24,7 @@ class Account extends Controller
         $email = $f3->get('POST.email');
         $password = $f3->get('POST.password');
         $mongo = $f3->get('MONGO');
-        $user = $mongo->users->users->findOne(['email' => $email]);
+        $user = $mongo->CoffeeDragon->users->findOne(['email' => $email]);
         if ($user) {
             $result = ['success' => false, 'message' => 'Există deja un cont cu această adresă de email'];
             $this->result = $result;

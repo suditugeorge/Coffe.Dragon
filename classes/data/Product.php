@@ -54,8 +54,9 @@ class Product
 
     public static function formatPrice($value)
     {
-        $parts = \util\StringUtil::getNumberParts($value);
-        return $parts['int'] . '<sup><span class="hidden">.</span>' . $parts['dec'] . '</sup> ' . CURRENCY;
+        $ret['int'] = floor($value);
+        $ret['dec'] = str_pad(round(($value - $ret['int']) * 100), 2, '0', STR_PAD_LEFT);
+        return $ret['int'] . '<sup><span class="hidden">.</span>' . $ret['dec'] . '</sup> ' . CURRENCY;
     }
 
 }
