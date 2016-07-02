@@ -1,5 +1,16 @@
+@font-face {
+  font-family: 'Rocker';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/ui/vendor/fonts/Rocker.otf') format('truetype');
+}
+
+
 .hidden {
     display: none !important;
+}
+.brown {
+	color: #b65511;
 }
 .error{
 	color: #a94442;
@@ -54,4 +65,36 @@ footer{
 .contact{
 	font-weight:700;
 	font-size:large;
+}
+.centered{
+	text-align: center;
+	width: 100%;
+	&.normal{
+		font-size: 120%;
+	}
+
+	&.medium {
+		font-weight: 600;
+		font-size: 140%;
+	}
+	&.big {
+		font-weight: 700;
+		font-size: 200%;
+	}
+
+}
+.fonted{
+	font-family: 'Rocker';
+	&.normal{
+		font-size: 120%;
+	}
+
+	&.medium {
+		font-weight: 600;
+		font-size: 140%;
+	}
+	&.big {
+		font-weight: 700;
+		font-size: 200%;
+	}
 }

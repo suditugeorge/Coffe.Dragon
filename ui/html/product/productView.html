@@ -9,16 +9,16 @@
 				<p>{{@product.description}}</p>
 				<div class="tabArea">
 					<ul class="nav nav-tabs">
-						<li class="active">
-							<a data-toggle="tab" href="#prepairTime">Timp de preparare</a>
-						</li>
-						<li><a data-tohhle="tab" href="#ingredients">Ingrediente</a></li>
+						<li class="active"><a data-toggle="tab" href="#description">Descriere</a></li>
+						<li><a data-toggle="tab" href="#prepairTime">Timp de preparare</a></li>
+						<li><a data-toggle="tab" href="#ingredients">Ingrediente</a></li>
 					</ul>
 					<div class="tab-content">
-						<div id="prepairTime" class="tab-pane fade in active">
+						<div id="description" class="tab-pane fade in active">{{@product.descrption}}</div>
+						<div id="prepairTime" class="tab-pane fade in">
 							<p>Timpul de preparare pentru acest produs este de {{@product.time_prepare.hours}}:{{@product.time_prepare.minutes}}:{{@product.time_prepare.seconds}}</p>
 						</div>
-						<div id="ingredients">
+						<div id="ingredients" class="tab-pane fade in">
 							<p>Clienții noștri sunt foarte importanți și de aceea încercăm să îi informăm în legătură cu ingredientele folosite.</p>
 							<ul class="list-unstyled">
 								<repeat group="{{@product.ingredients}}" value="{{@ingredient}}"><li>{{@ingredient}}</li></repeat>
