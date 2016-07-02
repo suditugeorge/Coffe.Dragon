@@ -22,6 +22,8 @@ class Products extends Controller
         }
         if ($product['has_image']) {
             $product['image_url'] = Images::getProductImageUrl($product['id']);
+        } else {
+            $product['image_url'] = '/images/404-image.jpg';
         }
         $product['price'] = floatval($product['price']);
         $f3->push('styles', 'product/product.css');
