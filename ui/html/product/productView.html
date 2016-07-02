@@ -5,14 +5,14 @@
 			</div>
 			<div class="media-body">
 				<h2>{{@product.name}}</h2>
-				<h3>{{data\Product::formatPrice(@product.price)}}</h3>
+				<h3 class="price">{{data\Product::formatPrice(@product.price)}}</h3>
 				<p>{{@product.description}}</p>
 				<div class="tabArea">
 					<ul class="nav nav-tabs">
 						<li class="active">
 							<a data-toggle="tab" href="#prepairTime">Timp de preparare</a>
 						</li>
-						<li><a data-tohhle="tab" href="#ingredients">Imgrediente</a></li>
+						<li><a data-tohhle="tab" href="#ingredients">Ingrediente</a></li>
 					</ul>
 					<div class="tab-content">
 						<div id="prepairTime" class="tab-pane fade in active">
