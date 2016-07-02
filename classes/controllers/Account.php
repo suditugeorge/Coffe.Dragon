@@ -53,6 +53,6 @@ class Account extends Controller
             $_SESSION = [];
             session_destroy();
         }
-        $f3->reroute('/home', true);
+        $f3->reroute('/', true);
     }
 }

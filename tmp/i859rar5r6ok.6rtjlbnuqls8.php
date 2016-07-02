@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
         </div>
-        <div class="logo">
+        <div class="logo hidden">
       	  <a href="/">
         		<img alt="Coffee Dragon" src="/images/logo-navBar.png">
       		</a>

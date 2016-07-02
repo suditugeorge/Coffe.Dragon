@@ -80,7 +80,7 @@ $ ->
     $.post '/doLogin', { email: email, password: password }, (json) ->
       if json.success
         $('.defined-error').addClass 'hidden'
-        window.location.href = "/home"
+        window.location.href = "/"
         return
       else
         error = $('.defined-error')

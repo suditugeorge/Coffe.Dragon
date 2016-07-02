@@ -97,7 +97,7 @@
         var error;
         if (json.success) {
           $('.defined-error').addClass('hidden');
-          window.location.href = "/home";
+          window.location.href = "/";
         } else {
           error = $('.defined-error');
           error.html(json.message);
