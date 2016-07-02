@@ -6,5 +6,5 @@ $ ->
 		$logo = $('.logo')
 		if $(window).innerWidth() < 1040
 			$logo.addClass 'hidden'
-		else
+		else 
 			$logo.removeClass 'hidden'
