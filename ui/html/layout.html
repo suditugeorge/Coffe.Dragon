@@ -9,6 +9,7 @@
         <script language ="JavaScript" src="/ui/vendor/js/jquery-2.2.4.min.js"></script>
         <script language ="JavaScript" src="/ui/vendor/js/bootstrap.min.js"></script>
         <script language ="JavaScript" src="/ui/vendor/js/loadCSS.js"></script>
+        <script language ="JavaScript" src="/ui/js/main.js"></script>
         <link rel="icon" href="/images/logo-transparent.png">
         <link href="/ui/vendor/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/ui/css/main.css">
