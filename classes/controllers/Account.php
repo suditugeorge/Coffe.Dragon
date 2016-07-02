@@ -11,7 +11,7 @@ class Account extends Controller
     public function loginOrRegister(\Base $f3)
     {
         $f3->set('title', 'Login');
-        $f3->set('description', 'Pentru a beneficia de ofertele și reducerile Coffee Dragon vă rugăm să vă creați un cont sau sa vă logați pe site.Vă mulțumim');
+        $f3->set('description', 'Pentru a beneficia de ofertele și reducerile Coffee Dragon™ vă rugăm să vă creați un cont sau sa vă logați pe site. Vă mulțumim');
         $f3->push('styles', 'users/login.css');
         $f3->push('scripts', 'ui/js/users/login.js');
         $f3->set('content', 'html/users/login.html');
@@ -32,7 +32,7 @@ class Account extends Controller
         }
         $is_created = Security::createAccount($email, $password);
         if (!$is_created) {
-            $this->result = ['success' => false, 'message' => 'A intervenit o eroare! Vă rugăm să încercați mai târziu sau să ne contactați telefonic.'];
+            $this->result = ['success' => false, 'message' => 'A intervenit o eroare! Vă rugăm să încercați mai târziu sau să ne contactați fie prin e-mail fie telefonic.'];
             return;
         }
         $this->result = $result;
