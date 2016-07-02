@@ -37,4 +37,22 @@ class Account extends Controller
         }
         $this->result = $result;
     }
+
+    public function login(\Base $f3)
+    {
+        $this->layout = 'json';
+        $email = $f3->get('POST.email');
+        $password = $f3->get('POST.password');
+        $result = Security::login($email, $password);
+        $this->result = $result;
+    }
+
+    public function logOut(\Base $f3)
+    {
+        if (Security::isLogedIn()) {
+            $_SESSION = [];
+            session_destroy();
+        }
+        $f3->reroute('/home', true);
+    }
 }
