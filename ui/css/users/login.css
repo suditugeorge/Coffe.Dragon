@@ -1,12 +1,13 @@
 .login {
   margin-top: 7em;
-  margin-bottom: 5em; }
+  margin-bottom: 5em;
+  background: url("/images/body_bg.jpg") 50% 0 repeat; }
 
 .panel-login {
   border-color: #ccc;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: 2px 2px 2px 2px #b65511; }
   .panel-login > .panel-heading {
     color: #00415d;
     background-color: #fff;
@@ -21,7 +22,7 @@
       -moz-transition: all 0.1s linear;
       transition: all 0.1s linear; }
       .panel-login > .panel-heading a.active {
-        color: #029f5b;
+        color: #b65511;
         font-size: 18px; }
     .panel-login > .panel-heading hr {
       margin-top: 10px;
@@ -48,7 +49,7 @@
     border-color: #ccc; }
 
 .btn-login {
-  background-color: #59B2E0;
+  background-color: #e56b15;
   outline: none;
   color: #fff;
   font-size: 14px;
@@ -56,11 +57,11 @@
   font-weight: normal;
   padding: 14px 0;
   text-transform: uppercase;
-  border-color: #59B2E6; }
+  border-color: #e56b15; }
   .btn-login:hover, .btn-login:focus {
     color: #fff;
-    background-color: #53A3CD;
-    border-color: #53A3CD; }
+    background-color: #b65511;
+    border-color: #b65511; }
 
 .forgot-password {
   text-decoration: underline;
@@ -70,7 +71,7 @@
     color: #666; }
 
 .btn-register {
-  background-color: #1CB94E;
+  background-color: #e56b15;
   outline: none;
   color: #fff;
   font-size: 14px;
@@ -78,10 +79,10 @@
   font-weight: normal;
   padding: 14px 0;
   text-transform: uppercase;
-  border-color: #1CB94A; }
+  border-color: #e56b15; }
   .btn-register:hover, .btn-register:focus {
     color: #fff;
-    background-color: #1CA347;
-    border-color: #1CA347; }
+    background-color: #b65511;
+    border-color: #b65511; }
 
 /*# sourceMappingURL=login.css.map */

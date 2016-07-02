@@ -77,12 +77,33 @@ footer {
 .fonted {
   font-family: 'Rocker'; }
   .fonted.normal {
-    font-size: 120%; }
+    font-size: 120% !important; }
   .fonted.medium {
-    font-weight: 600;
-    font-size: 140%; }
+    font-weight: 600 !important;
+    font-size: 140% !important; }
   .fonted.big {
-    font-weight: 700;
-    font-size: 200%; }
+    font-weight: 700 !important;
+    font-size: 200% !important; }
+
+.with-background {
+  background: url("/images/body_bg.jpg") 50% 0 repeat !important; }
+
+.improved-hr {
+  background: url("/images/betterHr.png") center 0 no-repeat;
+  height: 3em; }
+
+::-webkit-input-placeholder {
+  font-family: 'Rocker'; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: 'Rocker'; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: 'Rocker'; }
+
+:-ms-input-placeholder {
+  font-family: 'Rocker'; }
 
 /*# sourceMappingURL=main.css.map */
