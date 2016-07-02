@@ -4,7 +4,9 @@ $ ->
 
 	$(window).resize ->
 		$logo = $('.logo')
+		console.log $(window).width()
 		if $(window).width() < 1040
 			$logo.addClass 'hidden'
-		else
+		else 
+
 			$logo.removeClass 'hidden'
