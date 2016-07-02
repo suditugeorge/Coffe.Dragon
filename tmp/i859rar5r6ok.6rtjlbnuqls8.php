@@ -23,7 +23,10 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cont<span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a class="nav-text" href="/login">Log in</a></li>
+                  <?php if (is_array($_SESSION) && array_key_exists('user_id', $_SESSION) && isset($_SESSION['user_id'])): ?>
+                    <li><a class="nav-text" href="/logout">Log out</a></li>
+                    <?php else: ?><li><a class="nav-text" href="/login">Log in</a></li>
+                  <?php endif; ?>
 			            <li><a class="nav-text" href="/user-details">Detalii personale</a></li>
 			          </ul>
 			        </li>

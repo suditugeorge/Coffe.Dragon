@@ -11,10 +11,14 @@ if ((float) PCRE_VERSION < 7.9) {
 // Load configuration
 $f3->config('config.ini');
 
-$f3->route('GET|HEAD /', 'controllers\Main->home');
+$f3->route(['GET|HEAD /', 'GET|HEAD /home'], 'controllers\Main->home');
+
+//USER
 $f3->route('GET|HEAD /login', 'controllers\Account->loginOrRegister');
 $f3->route('POST /doLogin', 'controllers\Account->login');
 $f3->route('POST /register', 'controllers\Account->register');
+$f3->route('GET|HEAD /logout', 'controllers\Account->logOut');
+
 $f3->route('GET|HEAD /images/@imageName', 'controllers\Products->getStaticImage');
 $f3->route('GET|HEAD /phpinfo', function () {
     die(print_r(phpinfo(), 1));
