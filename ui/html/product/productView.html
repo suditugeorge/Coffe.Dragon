@@ -6,7 +6,6 @@
 			<div class="media-body">
 				<h2>{{@product.name}}</h2>
 				<h3 class="price">{{data\Product::formatPrice(@product.price)}}</h3>
-				<p>{{@product.description}}</p>
 				<div class="tabArea">
 					<ul class="nav nav-tabs">
 						<li class="active"><a data-toggle="tab" href="#description">Descriere</a></li>
@@ -14,11 +13,11 @@
 						<li><a data-toggle="tab" href="#ingredients">Ingrediente</a></li>
 					</ul>
 					<div class="tab-content">
-						<div id="description" class="tab-pane fade in active">{{@product.descrption}}</div>
-						<div id="prepairTime" class="tab-pane fade in">
+						<div id="description" class="tab-pane fade active in"><p>{{@product.description}}</p></div>
+						<div id="prepairTime" class="tab-pane fade active">
 							<p>Timpul de preparare pentru acest produs este de {{@product.time_prepare.hours}}:{{@product.time_prepare.minutes}}:{{@product.time_prepare.seconds}}</p>
 						</div>
-						<div id="ingredients" class="tab-pane fade in">
+						<div id="ingredients" class="tab-pane fade">
 							<p>Clienții noștri sunt foarte importanți și de aceea încercăm să îi informăm în legătură cu ingredientele folosite.</p>
 							<ul class="list-unstyled">
 								<repeat group="{{@product.ingredients}}" value="{{@ingredient}}"><li>{{@ingredient}}</li></repeat>
@@ -30,5 +29,3 @@
 		</div>
 	</div>
 </div>
-
-<pre>{{print_r(@product,true)}}</pre>

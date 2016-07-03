@@ -28,6 +28,9 @@
 	border-radius: 0 0 0.5em 0.5em;
 	border-color:transparent;
 	margin-bottom: 0 !important;
+	.nav-text{
+		letter-spacing: 2px;
+	}
 }
 .logo{
 	position: absolute;
@@ -46,8 +49,24 @@
 	padding-top: 3.2em;
 	background:url("/images/body_bg.jpg") 50% 0 repeat;
 }
+.dropdown{
+	letter-spacing: 2px;
+}
 .dropdown-menu {
 	background:url("/images/pattern_bg.jpg") 50% 0 repeat;
+	letter-spacing: 2px;
+	li{
+		a{
+			&:hover{
+				background:transparent;
+				color:#b65511 !important;
+			}
+			&:focus{
+				background:transparent;
+				color:#b65511 !important;
+			}
+		}
+	}
 }
 a.dropdown-toggle{
 	background:transparent !important;
