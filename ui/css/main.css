@@ -7,7 +7,11 @@
   display: none !important; }
 
 .brown {
-  color: #b65511; }
+  color: #b65511 }
+
+.brownfooter {
+  color: darken(#CD5C5C,30%); 
+}
 
 .error {
   color: #a94442;

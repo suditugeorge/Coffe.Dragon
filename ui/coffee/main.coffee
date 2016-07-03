@@ -8,3 +8,9 @@ $ ->
 			$logo.addClass 'hidden'
 		else 
 			$logo.removeClass 'hidden'
+
+	$('#addProduct').click () ->
+		$.post '/create-product', {}, (json) ->
+			window.location.href = '/'
+			return
+		return

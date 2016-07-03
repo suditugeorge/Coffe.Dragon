@@ -54,24 +54,15 @@ class Products extends Controller
     {
         $this->layout = null;
         $product = [
-            //'id' => Products::getNextProductId(),
+            'id' => Product::getNextProductId(),
             'name' => 'Produs Nou',
             'description' => '',
             'has_image' => false,
             'time_prepare' => ['hours' => 0, 'minutes' => 0, 'seconds' => 0],
             'ingredients' => [],
         ];
-        $testProduct = [
-            'id' => Product::getNextProductId(),
-            'name' => 'Produs Nou',
-            'description' => '',
-            'has_image' => true,
-            'img' => ['w' => 600, 'h' => 398],
-            'time_prepare' => ['hours' => 0, 'minutes' => 0, 'seconds' => 0],
-            'ingredients' => [],
-        ];
         $mongo = $f3->get('MONGO');
-        $mongo->CoffeeDragon->products->insert($testProduct, ['j' => 1]);
+        $mongo->CoffeeDragon->products->insert($product, ['j' => 1]);
         exit;
     }
     public function getStaticImage(\Base $f3)
