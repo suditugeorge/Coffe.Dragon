@@ -25,6 +25,9 @@ $f3->route('GET|HEAD /phpinfo', function () {
 });
 $f3->route('GET|HEAD /initialize', 'controllers\Products->setIds');
 $f3->route('GET|HEAD /create-product', 'controllers\Products->createNewProduct');
+
+$f3->route('GET|HEAD /produse', 'controllers\Products->productList');
+
 $f3->route('GET|HEAD /produs/@name/@id', 'controllers\Products->viewProduct');
 $f3->route('GET|HEAD /produs/@id', 'controllers\Products->redirectToProduct');
 $f3->route('GET|HEAD /imagini/produse/@id', 'controllers\Products->getImage');

@@ -1,6 +1,8 @@
 <?php
 namespace data;
 
+use data\Images;
+
 /**
  *
  */
@@ -57,6 +59,34 @@ class Product
         $ret['int'] = floor($value);
         $ret['dec'] = str_pad(round(($value - $ret['int']) * 100), 2, '0', STR_PAD_LEFT);
         return $ret['int'] . '<sup><span class="hidden">.</span>' . $ret['dec'] . '</sup> ' . CURRENCY;
+    }
+
+    public static function processProduct($product, $small = false)
+    {
+        if ($product['has_image']) {
+            $product['image_url'] = Images::getProductImageUrl($product['id']);
+        } else {
+            $product['image_url'] = '/images/404-image.jpg';
+        }
+        $product['price'] = floatval($product['price']);
+
+        if ($small) {
+            return [
+                'id' => $product['id'],
+                'name' => $product['name'],
+                'description' => $product['description'],
+                'image_url' => $product['image_url'],
+                'price' => $product['price'],
+                'product_url' => self::getProductUrl($product['name'], $product['id']),
+            ];
+        }
+
+        return $product;
+    }
+
+    public static function getProductUrl($productName, $productId)
+    {
+        return '/' . self::stringToUrl($productName) . '/' . $productId;
     }
 
 }
