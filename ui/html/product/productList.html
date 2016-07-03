@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="well well-sm">
+        <strong>{{@category}}</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
+        </div>
+    </div>
+    <div id="products" class="row list-group">
+      <repeat group="{{@products}}" value="{{@product}}">
+        <div class="item  col-xs-4 col-lg-4">
+          <div class="thumbnail">
+              <img class="group list-group-image" src="{{@product.image_url}}" alt="{{@product.name}}" />
+              <div class="caption">
+                  <h4 class="group inner list-group-item-heading">{{@product.name}}</h4>
+                  <p class="group inner list-group-item-text">{{@product.description}}</p>
+                  <div class="row">
+                      <div class="col-xs-12 col-md-6"><span class="price">{{data\Product::formatPrice(@product.price)}}</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </repeat>
+    </div>
+</div>
+
+<pre>{{print_r(@products,true)}}</pre>

@@ -1,20 +1,20 @@
 .product {
   padding-bottom: 3em;
-  padding-top: 5em; }
+  padding-top: 8em; }
 
 .media-left {
   float: left !important;
   padding: 0 3em 0 0; }
 
 .media-body h2 {
-  font-family: Papyrus;
   margin: 0;
   padding: 0;
   font-weight: bold; }
 .media-body .price {
-  font-family: Papyrus;
   color: #b65511;
   font-weight: 600; }
+.media-body .tab-content {
+  padding-top: 2em; }
 
 .nav-tabs {
   border-bottom: 1px solid #ddd; }
@@ -23,7 +23,7 @@
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus {
   font-weight: 600;
-  color: #888888;
+  color: #ed8740;
   background: url("/images/body_bg.jpg") 50% 0 repeat;
   border-top: none;
   border-left: none;
@@ -33,10 +33,10 @@
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   font-weight: 800;
-  color: #555555;
+  color: #592908;
   background: url("/images/body_bg.jpg") 50% 0 repeat;
   border-top: none;
   border-left: none;
-  border-bottom: 3px solid #b65511; }
+  border-bottom: 3px solid #592908; }
 
 /*# sourceMappingURL=product.css.map */

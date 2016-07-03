@@ -20,17 +20,31 @@ class Products extends Controller
             $f3->error(404);
             return;
         }
-        if ($product['has_image']) {
-            $product['image_url'] = Images::getProductImageUrl($product['id']);
-        } else {
-            $product['image_url'] = '/images/404-image.jpg';
-        }
-        $product['price'] = floatval($product['price']);
+        $product = Product::processProduct($product);
         $f3->push('styles', 'product/product.css');
         $f3->set('product', $product);
         $f3->set('content', 'html/product/productView.html');
         $f3->set('title', $product['name']);
         $f3->set('description', $product['description']);
+    }
+
+    public function productList(\Base $f3)
+    {
+        $mongo = $f3->get('MONGO');
+        $products = $mongo->CoffeeDragon->products->find();
+
+        $processedProducts = [];
+        foreach ($products as $product) {
+            $processedProducts[] = Product::processProduct($product, true);
+        }
+
+        $f3->set('category', 'Toate produsele');
+        $f3->set('products', $processedProducts);
+        $f3->set('description', 'Încercăm să aducem cât mai multe produse pentru a satisface fiecare client!');
+        $f3->push('styles', 'product/productList.css');
+        $f3->push('scripts', 'ui/js/product/productList.js');
+        $f3->set('content', 'html/product/productList.html');
+
     }
 
     public function redirectToProduct(\Base $f3)
