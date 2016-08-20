@@ -28,7 +28,6 @@ $f3->route('GET|HEAD /produse', 'controllers\Products->productList');
 $f3->route('GET|HEAD /produs/@name/@id', 'controllers\Products->viewProduct');
 $f3->route('GET|HEAD /produs/@id', 'controllers\Products->redirectToProduct');
 $f3->route('GET|HEAD /imagini/produse/@id', 'controllers\Products->getImage');
-
 $f3->set('ONERROR', function ($f3) {
     $error = $f3->get('ERROR');
     die(print_r($error, 1));

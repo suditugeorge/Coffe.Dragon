@@ -86,7 +86,7 @@ class Product
 
     public static function getProductUrl($productName, $productId)
     {
-        return '/produse/' . self::stringToUrl($productName) . '/' . $productId;
+        return '/produs/' . self::stringToUrl($productName) . '/' . $productId;
     }
 
 }
