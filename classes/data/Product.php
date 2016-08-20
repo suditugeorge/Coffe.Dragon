@@ -66,7 +66,7 @@ class Product
         if ($product['has_image']) {
             $product['image_url'] = Images::getProductImageUrl($product['id']);
         } else {
-            $product['image_url'] = '/images/404-image.jpg';
+            $product['image_url'] = Images::getProductImageUrl(null);
         }
         $product['price'] = floatval($product['price']);
 
@@ -86,7 +86,7 @@ class Product
 
     public static function getProductUrl($productName, $productId)
     {
-        return '/' . self::stringToUrl($productName) . '/' . $productId;
+        return '/produse/' . self::stringToUrl($productName) . '/' . $productId;
     }
 
 }

@@ -21,20 +21,12 @@ define('STATIC_IMAGES_DIR', '/images/');
 define('PRODUCTS_IMAGES_DIR', '/images/products/');
 define('CURRENCY', 'RON');
 
-define('JACKET_LARGE_WIDTH', 300);
-define('JACKET_LARGE_HEIGHT', 300);
-define('JACKET_THUMB_WIDTH', 225);
-define('JACKET_THUMB_HEIGHT', 225);
-define('JACKET_SMALL_WIDTH', 120);
-define('JACKET_SMALL_HEIGHT', 120);
-define('JACKET_XSMALL_WIDTH', 55);
-define('JACKET_XSMALL_HEIGHT', 55);
-
-define('JACKET_BANNER_WIDTH', 86);
-define('JACKET_BANNER_HEIGHT', 86);
-
+define('JACKET_NORMAL_WIDTH', 400);
+define('JACKET_NORMAL_HEIGHT', 250);
 define('JACKET_EXTRA_WIDTH', 400);
 define('JACKET_EXTRA_HEIGHT', 600);
+
+define('IMAGE_404', '/images/404-image.jpg');
 
 $mongo = new \MongoClient();
 

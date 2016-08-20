@@ -103,7 +103,7 @@ class Products extends Controller
     {
         $this->layout = null;
         $id = $f3->get('PARAMS.id');
-        echo Images::processImage($id, 'product');
+        echo Images::processImage($id, 'product', 'n');
         exit;
     }
 }
