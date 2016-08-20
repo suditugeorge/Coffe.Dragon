@@ -77,9 +77,8 @@ class Products extends Controller
         ];
         $mongo = $f3->get('MONGO');
         $mongo->CoffeeDragon->products->insert($product, ['j' => 1]);
-        $this->result = ['success' => true,'url'=>Product::getProductUrl($product['name'], $product['id'])];
+        $this->result = ['success' => true, 'url' => Product::getProductUrl($product['name'], $product['id'])];
 
-   
     }
     public function getStaticImage(\Base $f3)
     {
@@ -105,7 +104,7 @@ class Products extends Controller
     {
         $this->layout = null;
         $id = $f3->get('PARAMS.id');
-        echo Images::processImage($id, 'product');
+        echo Images::processImage($id, 'product', 'n');
         exit;
     }
 }
