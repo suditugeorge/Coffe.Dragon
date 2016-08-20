@@ -66,7 +66,7 @@ class Products extends Controller
 
     public function createNewProduct(\Base $f3)
     {
-        $this->layout = null;
+        $this->layout = 'json';
         $product = [
             'id' => Product::getNextProductId(),
             'name' => 'Produs Nou',
@@ -77,7 +77,9 @@ class Products extends Controller
         ];
         $mongo = $f3->get('MONGO');
         $mongo->CoffeeDragon->products->insert($product, ['j' => 1]);
-        exit;
+        $this->result = ['success' => true,'url'=>Product::getProductUrl($product['name'], $product['id'])];
+
+   
     }
     public function getStaticImage(\Base $f3)
     {

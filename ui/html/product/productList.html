@@ -11,9 +11,11 @@
       <repeat group="{{@products}}" value="{{@product}}">
         <div class="item  col-xs-4 col-lg-4">
           <div class="thumbnail">
-              <img class="group list-group-image" src="{{@product.image_url}}" alt="{{@product.name}}" />
+          <a href="{{@product.product_url}}">
+              <img class="group list-group-image" src="{{@product.image_url}}" alt="{{@product.name}}" /></a>
               <div class="caption">
-                  <h4 class="group inner list-group-item-heading">{{@product.name}}</h4>
+               <a href="{{@product.product_url}}">
+                  <h4 class="group inner list-group-item-heading">{{@product.name}}</h4></a>
                   <p class="group inner list-group-item-text">{{@product.description}}</p>
                   <div class="row">
                       <div class="col-xs-12 col-md-6"><span class="price">{{data\Product::formatPrice(@product.price)}}</span>

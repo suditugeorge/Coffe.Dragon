@@ -11,6 +11,6 @@ $ ->
 
 	$('#addProduct').click () ->
 		$.post '/create-product', {}, (json) ->
-			window.location.href = '/'
+			window.location.href = json.url
 			return
 		return
