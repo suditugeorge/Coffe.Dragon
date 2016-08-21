@@ -26,6 +26,12 @@ define('JACKET_NORMAL_HEIGHT', 250);
 define('JACKET_EXTRA_WIDTH', 400);
 define('JACKET_EXTRA_HEIGHT', 600);
 
+define('NOTIFICATION_SMTP_HOST', 'smtp.gmail.com');
+define('NOTIFICATION_SMTP_USER', 'coffee.dragon.cafe@gmail.com');
+define('NOTIFICATION_SMTP_PASSWORD', 'CoffeeDragon2016');
+define('NOTIFICATION_SMTP_SECURITY', 'ssl');
+define('NOTIFICATION_SMTP_PORT', 465);
+
 define('IMAGE_404', '/images/404-image.jpg');
 
 $mongo = new \MongoClient();

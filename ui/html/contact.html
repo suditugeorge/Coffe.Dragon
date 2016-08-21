@@ -1,11 +1,17 @@
+<div class="container">
 <form class="cf">
   <div class="half left cf">
-    <input type="text" id="input-name" placeholder="Nume">
-    <input type="email" id="input-email" placeholder="E-mail">
+    <input type="text" id="input-name" placeholder="Nume *">
+    <div class="error space-down fonted hidden input-name-error">Completați câmpul numelui!</div>
+    <input type="email" id="input-email" placeholder="E-mail *">
+    <div class="error space-down fonted hidden input-email-error">Completați câmpul adresei de e-mail!</div>
     <input type="text" id="input-subject" placeholder="Subiect">
+    <p class="fonted" style="text-align:left;">Câmpurile marcate cu * sunt obligatorii.</p>
   </div>
   <div class="half right cf">
-    <textarea name="message" type="text" id="input-message" placeholder="Continutul mesajului"></textarea>
+    <textarea name="message" type="text" id="input-message" placeholder="Continutul mesajului *"></textarea>
+    <div class="error fonted hidden input-message-error">Completați câmpul mesajului!</div>
   </div>  
   <input type="submit" value="Trimite mesajul" id="input-submit">
 </form>
+</div>

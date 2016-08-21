@@ -17,6 +17,10 @@
 	color: #a94442;
 	margin-top: 1em;
 	font-weight: 700;
+
+	&.space-down{
+		margin-bottom: 1em;
+	}
 }
 .input-error{
 	border:0.3em solid #a94442 !important;
@@ -128,6 +132,11 @@ footer{
 	background:url("/images/betterHr.png") center 0 no-repeat;
 	height: 3em;
 	
+}
+
+input[type="submit"] {
+  font-family: 'Rocker';
+  font-size: 1.3em;
 }
 
 ::-webkit-input-placeholder {
