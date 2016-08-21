@@ -19,4 +19,11 @@ class Main extends Controller
         $f3->push('styles', 'contact.css');
         $f3->set('content', 'html/contact.html');
     }
+    public function aboutUs(\Base $f3)
+    {
+        $f3->set('title', 'Cunoasteti-ne cat mai bine!');
+        $f3->set('description', 'Despre echipa Coffee Dragon');
+        $f3->push('styles', 'about-us.css');
+        $f3->set('content', 'html/about-us.html');
+    }
 }
