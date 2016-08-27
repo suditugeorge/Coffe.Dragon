@@ -110,6 +110,11 @@ footer{
 }
 .fonted{
 	font-family: 'Rocker';
+
+	&.small{
+		font-size: 90% !important;
+	}
+
 	&.normal{
 		font-size: 120% !important;
 	}

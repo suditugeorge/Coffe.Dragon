@@ -29,15 +29,22 @@ class Main extends Controller
         $email = $f3->get('POST.email');
         $name = $f3->get('POST.name');
         $message = $f3->get('POST.message');
+        $subject = $f3->get('POST.subject');
+        $f3->set('summary', 'Utilizatorul ' . $name . ' a trimis o cerere de contact');
+        $f3->set('subject', $subject);
+        $f3->set('email', $email);
+        $f3->set('message', $message);
+        $f3->set('name', $name);
 
         $mail = NetUtil::notificationEmailer();
 
         $mail->setFrom(NOTIFICATION_SMTP_USER, 'Coffee Dragon');
         $mail->addAddress('nicos_robert@yahoo.com');
+        $mail->addBCC('suditugeorge94@gmail.com');
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
         $mail->Subject = 'TEST';
-        $mail->Body = \Template::instance()->render('html/contact-email.html', false);
+        $mail->Body = \Template::instance()->render('html/email/user-contact.html', false);
         $mail->send();
 
         $this->result = ['success' => true];

@@ -19,7 +19,6 @@ class Images
         }
 
         $img_height = 250;
-
         //die(print_r(['width' => $img_width, 'height' => $img_height], 1));
 
         $im = new \Imagick();

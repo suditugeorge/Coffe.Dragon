@@ -8,4 +8,15 @@ class StaticContent
         $url = DOMAIN . MAIN_URL . '/ui/css/' . $value;
         return $url;
     }
+
+    public static function trimWholeWord($str, $len, $elipsis = '')
+    {
+        if (strlen($str) > $len) {
+            $str = substr($str, 0, $len);
+            $p = strrpos($str, ' ');
+            return substr($str, 0, $p) . $elipsis;
+        } else {
+            return $str;
+        }
+    }
 }
