@@ -1,5 +1,6 @@
 <?php
 
+require 'lib/base.php';
 define('ROOT_DIR', __DIR__);
 
 // Kickstart the framework

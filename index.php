@@ -1,6 +1,6 @@
 <?php
 // Kickstart the framework
-$f3 = require 'lib/base.php';
+//require 'lib/base.php';
 require_once '/config.php';
 
 $f3->set('DEBUG', 1);
