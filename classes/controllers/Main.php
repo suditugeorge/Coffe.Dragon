@@ -20,7 +20,7 @@ class Main extends Controller
             $f3->set('title', 'Contactați-ne cu drag!');
             $f3->set('description', 'Pagină de contact Coffee Dragon');
             $f3->push('styles', 'contact.css');
-            $f3->push('scripts', 'ui/js/contact.js');
+            $f3->push('scripts', 'contact.js');
             $f3->set('content', 'html/contact.html');
             return;
         }

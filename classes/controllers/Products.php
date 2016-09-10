@@ -22,6 +22,7 @@ class Products extends Controller
         }
         $product = Product::processProduct($product);
         $f3->push('styles', 'product/product.css');
+        $f3->push('scripts', 'product/product.js');
         $f3->set('product', $product);
         $f3->set('content', 'html/product/productView.html');
         $f3->set('title', $product['name']);
@@ -42,7 +43,6 @@ class Products extends Controller
         $f3->set('products', $processedProducts);
         $f3->set('description', 'Încercăm să aducem cât mai multe produse pentru a satisface fiecare client!');
         $f3->push('styles', 'product/productList.css');
-        $f3->push('scripts', 'ui/js/product/productList.js');
         $f3->set('content', 'html/product/productList.html');
 
     }
@@ -107,4 +107,26 @@ class Products extends Controller
         echo Images::processImage($id, 'product', 'n');
         exit;
     }
+
+    public function addProductReview(\Base $f3)
+    {
+        $this->layout = 'json';
+        $review = $f3->get('POST.review');
+        $id = intval($f3->get('POST.id'));
+        $mongo = $f3->get('MONGO');
+        $product = $mongo->CoffeeDragon->products->findOne(['id' => $id]);
+        
+        if(!$product){
+            $f3->error(404);
+            return;
+        }
+
+        if(!array_key_exists('reviews', $product)){
+            $product['reviews'] = [];
+        }
+        $product['reviews'][] = $review;
+        $mongo->CoffeeDragon->products->update(['id'=> $id],['$set' => ['reviews' => $product['reviews']]]);
+        $this->result = ['success' => true];
+    }
 }
+

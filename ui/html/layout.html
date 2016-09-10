@@ -31,7 +31,7 @@
     <check if="{{isset(@styles)}}"><repeat group="{{@styles}}" value="@style">
         <script type="text/javascript">loadCSS("{{data\StaticContent::css(@style)}}");</script>
     </repeat></check>
-    <check if="{{isset(@scripts)}}"><repeat group="{{@scripts}}" value="@script"><script src="{{@script}}"></script></repeat></check>
+    <check if="{{isset(@scripts)}}"><repeat group="{{@scripts}}" value="@script"><script src="{{data\StaticContent::js(@script)}}"></script></repeat></check>
 	<!-- Main -->
 	<div id="main">
         <include href="{{ @content }}" />

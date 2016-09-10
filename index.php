@@ -23,6 +23,7 @@ $f3->route('GET|HEAD /images/@imageName', 'controllers\Products->getStaticImage'
 
 $f3->route('GET|HEAD /initialize', 'controllers\Products->setIds');
 $f3->route('POST /create-product', 'controllers\Products->createNewProduct');
+$f3->route('POST /add-review', 'controllers\Products->addProductReview');
 
 $f3->route('GET|HEAD /produse', 'controllers\Products->productList');
 $f3->route('GET|HEAD /produs/@name/@id', 'controllers\Products->viewProduct');

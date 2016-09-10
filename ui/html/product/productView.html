@@ -1,4 +1,4 @@
-<div class="container product">
+<div class="container product" data-id="{{@product['id']}}">
 	<div class="col-xs-12">
 		<div class="media">
 			<div class="media-left"><img class="img-rounded img-responsive img-center" src="{{@product['image_url']}}" alt="{{@product['title']}}" />
@@ -31,5 +31,5 @@
 	<div class="form-group" >
      	<textarea class="form-control status-box" rows="2" placeholder="Spune ceva despre noi!"></textarea>
 	</div>
-	<button onclick="myFunction()">Trimite-ne opinia ta!</button>
+	<button id="send-review">Trimite-ne opinia ta!</button>
 </div>

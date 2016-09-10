@@ -9,6 +9,12 @@ class StaticContent
         return $url;
     }
 
+    public static function js($value)
+    {
+        $url = DOMAIN . MAIN_URL . '/ui/js/'. $value;
+        return $url;
+    }
+
     public static function trimWholeWord($str, $len, $elipsis = '')
     {
         if (strlen($str) > $len) {
