@@ -11,16 +11,22 @@
 						<li class="active"><a data-toggle="tab" href="#description"><span class="fonted medium">Descriere</a></span></li>
 						<li><a data-toggle="tab" href="#prepairTime"><span class="fonted medium">Timp de preparare</span></a></li>
 						<li><a data-toggle="tab" href="#ingredients"><span class="fonted medium">Ingrediente</span></a></li>
+						<li><a data-toggle="tab" href="#reviews"><span class="fonted medium">Reviews</span></a></li>
 					</ul>
 					<div class="tab-content">
 						<div id="description" class="fonted medium tab-pane fade active in"><p>{{@product.description}}</p></div>
-						<div id="prepairTime" class="fonted medium tab-pane fade active">
+						<div id="prepairTime" class="fonted medium tab-pane fade">
 							<p>Timpul de preparare pentru acest produs este de {{@product.time_prepare.hours}}:{{@product.time_prepare.minutes}}:{{@product.time_prepare.seconds}}</p>
 						</div>
 						<div id="ingredients" class="fonted medium tab-pane fade">
 							<p>Clienții noștri sunt foarte importanți și de aceea încercăm să îi informăm în legătură cu ingredientele folosite.</p>
 							<ul class="list-unstyled">
 								<repeat group="{{@product.ingredients}}" value="{{@ingredient}}"><li>{{@ingredient}}</li></repeat>
+							</ul>
+						</div>
+						<div id="reviews" class="fonted medium tab-pane fade">
+							<ul class="list-unstyled">
+								<repeat group="{{@product.reviews}}" value="{{@review}}"><li>{{@review}}</li></repeat>
 							</ul>
 						</div>
 					</div>

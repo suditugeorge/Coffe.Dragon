@@ -29,11 +29,11 @@ register = () ->
   $('.confirm-password-error').addClass 'hidden'
   $.post '/register', { email: email, password: password }, (json) ->
     if json.success
-      $('.defined-error').addClass 'hidden'
+      $('.defined-error-register').addClass 'hidden'
       window.location.href = "/"
       return
     else
-      error = $('.defined-error')
+      error = $('.defined-error-register')
       error.html(json.message)
       error.removeClass 'hidden'
       return
@@ -57,7 +57,6 @@ $ ->
     e.preventDefault()
     return
   $('#register-submit').click (e) ->
-    #Call the function register witch does not take any parameters
     register()
     return
   $('[name="login-submit"]').click (e) ->
@@ -79,11 +78,11 @@ $ ->
       return
     $.post '/doLogin', { email: email, password: password }, (json) ->
       if json.success
-        $('.defined-error').addClass 'hidden'
+        $('.defined-error-login').addClass 'hidden'
         window.location.href = "/"
         return
       else
-        error = $('.defined-error')
+        error = $('.defined-error-login')
         error.html(json.message)
         error.removeClass 'hidden'
         return
